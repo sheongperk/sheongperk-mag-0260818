@@ -1,0 +1,33 @@
+/*
+ * brand.css — Design tokens extracted from the source site
+ * Source: https://www.malaysiaairlines.com/sg/en/experience/malaysian-hospitality/elevating-your-journey.html
+ * Font family "mundial" is a commercial typeface (not on Google Fonts / fallback Typekit);
+ * a geometric-sans system stack is used as the fallback.
+ */
+
+:root {
+  /* fonts */
+  --brand-body-font-family: mundial, "Helvetica Neue", helvetica, arial, sans-serif;
+  --brand-heading-font-family: mundial, "Helvetica Neue", helvetica, arial, sans-serif;
+
+  /* colors */
+  --brand-background-color: #fff;
+  --brand-text-color: #333;
+  --brand-navy-color: #041049;
+  --brand-link-color: #041049;
+  --brand-link-hover-color: #747778;
+  --brand-dark-color: #041049;
+  --brand-light-color: #f4f4f4;
+  --brand-light-text-color: #fff;
+
+  /* heading sizes (desktop) */
+  --heading-size-xxl: 40px;
+  --heading-size-xl: 32px;
+  --heading-size-l: 24px;
+  --heading-size-m: 20px;
+  --heading-size-s: 18px;
+  --heading-size-xs: 16px;
+
+  /* spacing */
+  --brand-content-max-width: 1200px;
+}

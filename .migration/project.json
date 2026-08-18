@@ -1,0 +1,11 @@
+{
+  "type": "xwalk",
+  "sites": {
+    "sheongperk-mag-0260818": {
+      "previewOrg": "sheongperk",
+      "previewSite": "sheongperk-mag-0260818",
+      "contentHostUrl": "https://content.da.live/sheongperk/sheongperk-mag-0260818/",
+      "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

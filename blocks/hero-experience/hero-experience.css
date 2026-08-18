@@ -1,0 +1,72 @@
+/* Block: hero-experience
+ * Full-bleed dark-teal hero banner with centered white heading + subheading.
+ * Values extracted from source computed styles (see migration-work/hero-experience-extracted.css).
+ */
+
+/* Full-bleed: cancel the section wrapper max-width / gutter */
+.hero-experience-container .hero-experience-wrapper {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-experience {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  padding: 48px 24px;
+  background-color: #00425f;
+  color: var(--text-light);
+  text-align: center;
+}
+
+/* Row 1 is the (empty) background-image row from the authored table */
+.hero-experience > div:first-child {
+  display: none;
+}
+
+/* Row 2 holds the heading + subheading */
+.hero-experience > div:last-child {
+  width: 100%;
+  max-width: var(--brand-content-max-width, 1200px);
+  margin: 0 auto;
+}
+
+.hero-experience h1 {
+  margin: 0 0 16px;
+  color: var(--text-light);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.hero-experience h5 {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+@media (width >= 900px) {
+  .hero-experience {
+    min-height: 353px;
+    padding: 64px 32px;
+  }
+
+  .hero-experience h1 {
+    margin-bottom: 24px;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: 2px;
+  }
+
+  .hero-experience h5 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}

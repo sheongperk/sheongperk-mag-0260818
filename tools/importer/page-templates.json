@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "projectType": "xwalk"
+  },
+  "templates": [
+    {
+      "name": "experience-content-page",
+      "urls": [
+        "https://www.malaysiaairlines.com/sg/en/experience/malaysian-hospitality/elevating-your-journey.html"
+      ],
+      "coverageGaps": [],
+      "description": "Malaysian Hospitality experience content page: hero banner with heading/subheading, followed by an alternating image+text feature grid (lounge, seats carousel, meals video, wifi, kids pack, entertainment), a closing CTA heading with a tabbed promotions/inspiration selector.",
+      "blocks": [
+        {
+          "name": "hero-experience",
+          "instances": [
+            "main h1"
+          ]
+        },
+        {
+          "name": "columns-feature",
+          "instances": [
+            "main .TextComponent.is-desktop"
+          ]
+        },
+        {
+          "name": "tabs-promo",
+          "instances": [
+            "main .SwitchTabHeaderItem"
+          ]
+        }
+      ]
+    }
+  ]
+}

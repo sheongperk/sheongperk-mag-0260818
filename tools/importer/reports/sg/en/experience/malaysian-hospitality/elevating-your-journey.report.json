@@ -1,0 +1,23 @@
+{
+  "status": "success",
+  "url": "https://www.malaysiaairlines.com/sg/en/experience/malaysian-hospitality/elevating-your-journey.html",
+  "path": "sg/en/experience/malaysian-hospitality/elevating-your-journey",
+  "timestamp": "2026-08-18T06:12:36.354Z",
+  "title": "Malaysia Airlines: Elevating Your Journey, One Moment at a Time",
+  "template": "experience-content-page",
+  "blocks": [
+    "hero-experience",
+    "columns-feature",
+    "columns-feature",
+    "columns-feature",
+    "columns-feature",
+    "columns-feature",
+    "columns-feature",
+    "columns-feature",
+    "columns-feature",
+    "columns-feature",
+    "columns-feature",
+    "tabs-promo",
+    "tabs-promo"
+  ]
+}

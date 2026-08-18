@@ -1,0 +1,168 @@
+/* columns-feature -- alternating media + text feature grid.
+ * Design values extracted from source computed styles:
+ * https://www.malaysiaairlines.com/sg/en/experience/malaysian-hospitality/elevating-your-journey.html
+ */
+
+/* The block is a vertical stack of feature rows.
+   Using flex column + gap avoids margin-collapse surprises for the row rhythm. */
+.columns-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  box-sizing: border-box;
+}
+
+/* Each feature row: stacked on mobile (media on top, text below). */
+.columns-feature .columns-feature-row {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+/* Media always renders first on mobile regardless of source column order. */
+.columns-feature .columns-feature-row > div {
+  order: 1;
+}
+
+.columns-feature .columns-feature-row > .columns-feature-img-col,
+.columns-feature .columns-feature-row > .columns-feature-video-container {
+  order: 0;
+}
+
+/* --- Media: single image --- */
+.columns-feature .columns-feature-img-col picture {
+  display: block;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.columns-feature .columns-feature-img-col img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 24px;
+}
+
+/* Seats row: the media cell has two pictures wrapped in a <p> (EDS side-effect).
+   Stack them so both remain visible and keep the rounded treatment. */
+.columns-feature .columns-feature-img-col > p {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+}
+
+/* --- Media: YouTube video --- */
+/* stylelint-disable-next-line no-descending-specificity */
+.columns-feature .columns-feature-video-container {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* The block JS wraps the iframe in a 16:9 padding-box; override to ~3:2 so the
+   video rows keep the same height rhythm as the image rows. */
+.columns-feature .columns-feature-video-container > div {
+  padding-bottom: 66.66% !important;
+}
+
+/* YouTube facade: poster + play button, real player loads on click. */
+.columns-feature .columns-feature-youtube-facade {
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.columns-feature .columns-feature-youtube-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 68px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  background: rgb(0 0 0 / 60%);
+  transition: background 0.2s;
+}
+
+.columns-feature .columns-feature-youtube-play::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  border-style: solid;
+  border-width: 10px 0 10px 18px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.columns-feature .columns-feature-youtube-facade:hover .columns-feature-youtube-play,
+.columns-feature .columns-feature-youtube-facade:focus-visible .columns-feature-youtube-play {
+  background: #f00;
+}
+
+/* --- Text column --- */
+.columns-feature .columns-feature-row > div:not(.columns-feature-img-col, .columns-feature-video-container) {
+  box-sizing: border-box;
+}
+
+.columns-feature .columns-feature-row h4 {
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  color: var(--main-accent-color);
+}
+
+.columns-feature .columns-feature-row p {
+  margin: 12px 0 0;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  color: var(--text-color);
+}
+
+.columns-feature .columns-feature-row p:first-child {
+  margin-top: 0;
+}
+
+/* --- Desktop: two columns, media ~70% / text ~30%, text vertically centered --- */
+@media (width >= 900px) {
+  .columns-feature {
+    gap: 60px;
+  }
+
+  .columns-feature .columns-feature-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+  }
+
+  /* Alternate media side on every other feature row. */
+  .columns-feature .columns-feature-row.columns-feature-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  .columns-feature .columns-feature-row > div {
+    order: unset;
+  }
+
+  .columns-feature .columns-feature-row > .columns-feature-img-col,
+  .columns-feature .columns-feature-row > .columns-feature-video-container {
+    flex: 0 0 70%;
+  }
+
+  .columns-feature .columns-feature-row > div:not(.columns-feature-img-col, .columns-feature-video-container) {
+    flex: 1;
+  }
+
+  .columns-feature .columns-feature-row h4 {
+    margin-bottom: 16px;
+  }
+
+  .columns-feature .columns-feature-row p {
+    margin-top: 16px;
+  }
+}

@@ -1,26 +1,40 @@
+/* Malaysia Airlines footer — navy background, white text */
+
 footer {
-  background-color: var(--dark-color);
-  font-size: var(--body-font-size-xs);
-  font-family: var(--light-font-family);
-  background-color: var(--dark-color-opacity);
-  background-color: #000;
+  background-color: var(--brand-navy-color, #041049);
+  color: #fff;
   width: 100%;
-  z-index: 2;
-  color: #ffffff;
-  position: relative;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+  font-family: var(--body-font-family);
+  font-size: 14px;
 }
 
+/* footer.js wraps all sections in a single <div> inside .footer */
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
   padding: 40px 24px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 32px;
+  align-items: flex-start;
 }
 
-footer .footer p {
-  margin: 0;
-  margin-bottom: 12px;
+/* Each authored div becomes a .section */
+footer .footer .section {
+  flex: 1 1 160px;
+  min-width: 150px;
+}
+
+footer .footer .default-content-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+footer .footer h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
 }
 
 footer .footer ul {
@@ -28,33 +42,69 @@ footer .footer ul {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 16px;
-}
-
-footer .footer ul li {
-  display: inline-flex;
-  align-items: center;
-}
-
-footer .footer img {
-  width: 100px;
-  height: auto;
-  margin-bottom: 20px;
+  flex-direction: column;
+  gap: 10px;
 }
 
 footer .footer a {
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
+  font-size: 14px;
+  transition: opacity 0.2s;
 }
 
 footer .footer a:hover {
-  color: var(--main-accent-color);
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+footer .footer p {
+  margin: 0;
+}
+
+footer .footer img {
+  height: 32px;
+  width: auto;
+  vertical-align: middle;
+}
+
+/* Partner-logo row: full width, logos in a horizontal group with dividers. */
+footer .footer .section:has(img) {
+  flex-basis: 100%;
+  margin-top: 8px;
+  padding: 24px 0;
+  border-top: 1px solid rgb(255 255 255 / 20%);
+  border-bottom: 1px solid rgb(255 255 255 / 20%);
+}
+
+footer .footer .section:has(img) .default-content-wrapper {
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Legal bar + copyright: full-width last section. */
+footer .footer .section:last-child {
+  flex-basis: 100%;
+}
+
+footer .footer .section:last-child ul {
+  flex-flow: row wrap;
+  gap: 8px 24px;
+  margin-bottom: 16px;
+}
+
+footer .footer .section:last-child a {
+  font-size: 13px;
+}
+
+footer .footer .section:last-child p {
+  font-size: 12px;
+  opacity: 0.7;
 }
 
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 50px 32px;
+    padding: 56px 32px 32px;
   }
 }

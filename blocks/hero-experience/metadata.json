@@ -1,0 +1,37 @@
+{
+  "variantName": "hero-experience",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-08-18T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.malaysiaairlines.com/sg/en/experience/malaysian-hospitality/elevating-your-journey.html",
+    "originPage": "Malaysian Hospitality experience content page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background image + heading + subheading",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "experience/marketing content pages",
+      "full-bleed photographic hero banners with centered white heading + subheading"
+    ],
+    "notSuitableFor": [
+      "text-only heroes without a background image",
+      "heroes requiring left-aligned content or prominent CTAs"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/sg/en/experience/malaysian-hospitality/elevating-your-journey"],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-18T00:00:00.000Z"
+  }
+}

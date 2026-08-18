@@ -180,7 +180,15 @@ async function buildBreadcrumbs() {
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  let navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  // This project serves authored content under /content; prefer the migrated
+  // nav there and fall back to the site-root nav when it is not present.
+  if (!navMeta) {
+    const contentNav = await fetch('/content/nav.plain.html', { method: 'HEAD' })
+      .then((r) => r.ok)
+      .catch(() => false);
+    if (contentNav) navPath = '/content/nav';
+  }
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM
@@ -188,6 +196,16 @@ export default async function decorate(block) {
   const nav = document.createElement('nav');
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+
+  // nav.plain.html uses relative image paths (validator requirement); they are
+  // stored under /content/images. Rewrite to an absolute content path so they
+  // resolve regardless of the current page URL.
+  nav.querySelectorAll('img[src]').forEach((img) => {
+    const src = img.getAttribute('src');
+    if (src && !src.startsWith('http') && !src.startsWith('/')) {
+      img.setAttribute('src', `/content/${src.replace(/^\.?\/?/, '')}`);
+    }
+  });
 
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {

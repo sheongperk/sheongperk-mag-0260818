@@ -1,0 +1,38 @@
+{
+  "variantName": "tabs-promo",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-08-18T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.malaysiaairlines.com/sg/en/experience/malaysian-hospitality/elevating-your-journey.html",
+    "originPage": "Malaysian Hospitality experience content page",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "promo",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "tab labels switching full-width promo banners (background image + overlay heading + subtext + CTA)",
+    "buttonCount": 2,
+    "imageCount": 2,
+    "tabCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "closing CTA sections with a tabbed promotional/inspiration selector",
+      "tabbed banners where each panel is an image-backed call-to-action"
+    ],
+    "notSuitableFor": [
+      "text-only tabbed content without banner imagery",
+      "long-form tabbed documentation panels"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/sg/en/experience/malaysian-hospitality/elevating-your-journey"],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-18T00:00:00.000Z"
+  }
+}
