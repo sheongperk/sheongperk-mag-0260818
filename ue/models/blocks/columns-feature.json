@@ -1,0 +1,76 @@
+{
+  "definitions": [
+    {
+      "title": "Columns Feature",
+      "id": "columns-feature",
+      "model": "columns-feature",
+      "filter": "columns-feature",
+      "plugins": {
+        "da": {
+          "rows": 0,
+          "columns": 0
+        }
+      }
+    },
+    {
+      "title": "Columns Feature Item",
+      "id": "columns-feature-item",
+      "model": "columns-feature-item",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 2,
+          "fields": [
+            { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
+            { "name": "videoUrl", "selector": "div:nth-child(1)>p>a[href]" },
+            { "name": "text", "selector": "div:nth-child(2)" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "columns-feature-item",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "videoUrl",
+          "label": "YouTube URL (instead of image)",
+          "multi": false
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "columns-feature",
+      "components": [
+        "columns-feature-item"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "definitions": [
+    {
+      "title": "Tabs Promo",
+      "id": "tabs-promo",
+      "model": "tabs-promo",
+      "filter": "tabs-promo",
+      "plugins": {
+        "da": {
+          "rows": 0,
+          "columns": 0
+        }
+      }
+    },
+    {
+      "title": "Tabs Promo Item",
+      "id": "tabs-promo-item",
+      "model": "tabs-promo-item",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 2,
+          "fields": [
+            { "name": "title", "selector": "div:nth-child(1)>p:nth-child(1)" },
+            { "name": "image", "selector": "div:nth-child(2)>picture>img[src]" },
+            { "name": "imageAlt", "selector": "div:nth-child(2)>picture>img[alt]" },
+            { "name": "link", "selector": "div:nth-child(2)>p>a[href]" },
+            { "name": "linkText", "selector": "div:nth-child(2)>p>a" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "tabs-promo-item",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Tab Name",
+          "multi": false
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Banner Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Banner Image Alt",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "link",
+          "label": "CTA Link",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linkText",
+          "label": "CTA Text",
+          "multi": false
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "tabs-promo",
+      "components": [
+        "tabs-promo-item"
+      ]
+    }
+  ]
+}

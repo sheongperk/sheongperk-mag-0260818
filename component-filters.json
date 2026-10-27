@@ -24,7 +24,10 @@
       "text",
       "video",
       "dynamicmedia-template",
-      "teaser"
+      "teaser",
+      "hero-experience",
+      "columns-feature",
+      "tabs-promo"
     ]
   },
   {
@@ -46,6 +49,12 @@
     ]
   },
   {
+    "id": "columns-feature",
+    "components": [
+      "columns-feature-item"
+    ]
+  },
+  {
     "id": "columns",
     "components": [
       "columns-row"
@@ -62,6 +71,12 @@
     "components": [
       "text",
       "image"
+    ]
+  },
+  {
+    "id": "tabs-promo",
+    "components": [
+      "tabs-promo-item"
     ]
   },
   {

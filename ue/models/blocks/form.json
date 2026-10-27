@@ -1,0 +1,41 @@
+{
+  "definitions": [
+    {
+      "title": "Form",
+      "id": "form",
+      "model": "form",
+      "plugins": {
+        "da": {
+          "rows": 2,
+          "columns": 1,
+          "fields": [
+            { "name": "formUrl", "selector": "div:nth-child(1)>div>p>a[href]" },
+            { "name": "submitUrl", "selector": "div:nth-child(2)>div>p>a[href]" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "form",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "formUrl",
+          "label": "Form Definition (.json)",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "submitUrl",
+          "label": "Submit URL",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

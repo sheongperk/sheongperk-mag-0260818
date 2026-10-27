@@ -1,0 +1,49 @@
+{
+  "definitions": [
+    {
+      "title": "Embed",
+      "id": "embed",
+      "model": "embed",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 1,
+          "fields": [
+            { "name": "image", "selector": "div>div>picture>img[src]" },
+            { "name": "imageAlt", "selector": "div>div>picture>img[alt]" },
+            { "name": "embedUrl", "selector": "div>div>p>a[href]" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "embed",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Placeholder Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Placeholder Image Alt",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "embedUrl",
+          "label": "URL (YouTube, Vimeo, Twitter or any page)",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

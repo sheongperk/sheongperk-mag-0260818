@@ -167,6 +167,47 @@
           }
         },
         {
+          "title": "Columns Feature",
+          "id": "columns-feature",
+          "model": "columns-feature",
+          "filter": "columns-feature",
+          "plugins": {
+            "da": {
+              "rows": 0,
+              "columns": 0
+            }
+          }
+        },
+        {
+          "title": "Columns Feature Item",
+          "id": "columns-feature-item",
+          "model": "columns-feature-item",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div:nth-child(1)>picture>img[alt]"
+                },
+                {
+                  "name": "videoUrl",
+                  "selector": "div:nth-child(1)>p>a[href]"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
           "title": "Columns",
           "id": "columns",
           "model": "columns",
@@ -230,6 +271,52 @@
           }
         },
         {
+          "title": "Embed",
+          "id": "embed",
+          "model": "embed",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div>div>picture>img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div>div>picture>img[alt]"
+                },
+                {
+                  "name": "embedUrl",
+                  "selector": "div>div>p>a[href]"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Form",
+          "id": "form",
+          "model": "form",
+          "plugins": {
+            "da": {
+              "rows": 2,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "formUrl",
+                  "selector": "div:nth-child(1)>div>p>a[href]"
+                },
+                {
+                  "name": "submitUrl",
+                  "selector": "div:nth-child(2)>div>p>a[href]"
+                }
+              ]
+            }
+          }
+        },
+        {
           "title": "Fragment",
           "id": "fragment",
           "model": "fragment",
@@ -245,6 +332,31 @@
                 {
                   "name": "fragmentUrlText",
                   "selector": "div>div>p>a"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Hero Experience",
+          "id": "hero-experience",
+          "model": "hero-experience",
+          "plugins": {
+            "da": {
+              "rows": 2,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(1)>div>picture>img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div:nth-child(1)>div>picture>img[alt]"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(2)>div"
                 }
               ]
             }
@@ -303,6 +415,62 @@
             "da": {
               "rows": 1,
               "columns": 1
+            }
+          }
+        },
+        {
+          "title": "Table",
+          "id": "table",
+          "model": "table",
+          "plugins": {
+            "da": {
+              "rows": 3,
+              "columns": 3
+            }
+          }
+        },
+        {
+          "title": "Tabs Promo",
+          "id": "tabs-promo",
+          "model": "tabs-promo",
+          "filter": "tabs-promo",
+          "plugins": {
+            "da": {
+              "rows": 0,
+              "columns": 0
+            }
+          }
+        },
+        {
+          "title": "Tabs Promo Item",
+          "id": "tabs-promo-item",
+          "model": "tabs-promo-item",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "title",
+                  "selector": "div:nth-child(1)>p:nth-child(1)"
+                },
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(2)>picture>img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div:nth-child(2)>picture>img[alt]"
+                },
+                {
+                  "name": "link",
+                  "selector": "div:nth-child(2)>p>a[href]"
+                },
+                {
+                  "name": "linkText",
+                  "selector": "div:nth-child(2)>p>a"
+                }
+              ]
             }
           }
         },
