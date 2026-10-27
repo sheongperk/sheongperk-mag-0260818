@@ -1,0 +1,9 @@
+{
+  "variantName": "quote",
+  "baseBlock": "quote",
+  "version": "1.0.0",
+  "created": "2026-10-27T00:00:00.000Z",
+  "description": "Pull quote with an optional attribution (italic text becomes a citation).",
+  "visualCharacteristics": { "purpose": "quote", "imagePattern": "noimg" },
+  "contentPattern": { "structure": "row 1: quotation; row 2: attribution", "buttonCount": 0, "imageCount": 0 }
+}

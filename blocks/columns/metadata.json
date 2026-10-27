@@ -1,0 +1,10 @@
+{
+  "variantName": "columns",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-10-27T00:00:00.000Z",
+  "description": "Side-by-side columns of image and text. A column with a YouTube or MP4 link plays as a video.",
+  "visualCharacteristics": { "purpose": "feature", "imagePattern": "large" },
+  "contentPattern": { "structure": "repeating rows of 2 cells: image/video cell + text cell (heading, paragraphs)", "buttonCount": 0, "imageCount": 3 },
+  "usage": { "pagesUsing": ["index"], "reuseCount": 1, "lastUsed": "2026-10-27T00:00:00.000Z" }
+}

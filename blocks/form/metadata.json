@@ -1,0 +1,9 @@
+{
+  "variantName": "form",
+  "baseBlock": "form",
+  "version": "1.0.0",
+  "created": "2026-10-27T00:00:00.000Z",
+  "description": "Renders a form from a form-definition spreadsheet (.json link) and posts submissions to a submit URL.",
+  "visualCharacteristics": { "purpose": "form", "imagePattern": "noimg" },
+  "contentPattern": { "structure": "single cell: link to form definition .json + link to submit endpoint", "buttonCount": 0, "imageCount": 0 }
+}

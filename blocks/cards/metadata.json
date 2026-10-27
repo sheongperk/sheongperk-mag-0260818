@@ -1,0 +1,11 @@
+{
+  "variantName": "cards",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-10-27T00:00:00.000Z",
+  "description": "Grid of cards, each with an image, heading, text and link. An optional third cell sets the card style (image-top, image-bottom, image-left, image-right, teaser-card, teaser-overlay).",
+  "visualCharacteristics": { "purpose": "listing", "imagePattern": "medium" },
+  "contentPattern": { "structure": "repeating rows: image cell + body cell (heading, text, link) + optional card-style cell + optional cta-style cell", "buttonCount": 3, "imageCount": 3 },
+  "variants": ["gradient"],
+  "usage": { "pagesUsing": ["index"], "reuseCount": 1, "lastUsed": "2026-10-27T00:00:00.000Z" }
+}

@@ -1,0 +1,9 @@
+{
+  "variantName": "embed",
+  "baseBlock": "embed",
+  "version": "1.0.0",
+  "created": "2026-10-27T00:00:00.000Z",
+  "description": "Embeds a YouTube, Vimeo or Twitter post (or any URL in an iframe), with an optional placeholder image.",
+  "visualCharacteristics": { "purpose": "media", "imagePattern": "large" },
+  "contentPattern": { "structure": "single cell: optional placeholder image + embed URL link", "buttonCount": 0, "imageCount": 1 }
+}

@@ -1,0 +1,23 @@
+{
+  "variantName": "carousel",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-10-27T00:00:00.000Z",
+  "description": "Sliding carousel of image cards with headings. Each row is a slide: image, heading, card style.",
+  "visualCharacteristics": {
+    "purpose": "carousel",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "repeating rows of 4 cells: image + heading + card style + cta style (rows with fewer cells are not treated as slides)",
+    "buttonCount": 0,
+    "imageCount": 4
+  },
+  "usage": {
+    "pagesUsing": [
+      "index"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-27T00:00:00.000Z"
+  }
+}

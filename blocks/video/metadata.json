@@ -1,0 +1,10 @@
+{
+  "variantName": "video",
+  "baseBlock": "video",
+  "version": "1.0.0",
+  "created": "2026-10-27T00:00:00.000Z",
+  "description": "Plays a YouTube, Vimeo or MP4 video from a link, with an optional placeholder image.",
+  "visualCharacteristics": { "purpose": "media", "imagePattern": "large" },
+  "contentPattern": { "structure": "single cell: optional placeholder image + video link", "buttonCount": 0, "imageCount": 1 },
+  "variants": ["autoplay"]
+}
