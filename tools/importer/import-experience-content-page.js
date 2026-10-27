@@ -128,11 +128,28 @@ export default {
     executeTransformers('afterTransform', main, payload);
 
     // 5. Apply WebImporter built-in rules
+    // The source og:image/twitter:image is the bare domain ("https://www.malaysiaairlines.com:443"),
+    // not an image. Drop it so createMetadata does not emit a broken metadata Image that DA cannot upload.
+    document.querySelectorAll('meta[property="og:image"], meta[name="twitter:image"]').forEach((meta) => {
+      try {
+        const { pathname } = new URL(meta.getAttribute('content'), params.originalURL);
+        if (!pathname || pathname === '/') meta.remove();
+      } catch (e) {
+        meta.remove();
+      }
+    });
+
     const hr = document.createElement('hr');
     main.appendChild(hr);
     WebImporter.rules.createMetadata(main, document);
     WebImporter.rules.transformBackgroundImages(main, document);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
+
+    // The hero background on the source is an empty CSS url(""), which transformBackgroundImages
+    // turns into <img src="">. Remove images without a source; DA upload fails on them.
+    main.querySelectorAll('img').forEach((img) => {
+      if (!(img.getAttribute('src') || '').trim()) (img.closest('picture') || img).remove();
+    });
 
     // 6. Generate sanitized path (map root URL to /index)
     const rawPath = new URL(params.originalURL).pathname

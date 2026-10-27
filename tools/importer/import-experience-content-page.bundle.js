@@ -286,11 +286,22 @@ var CustomImportScript = (() => {
         }
       });
       executeTransformers("afterTransform", main, payload);
+      document.querySelectorAll('meta[property="og:image"], meta[name="twitter:image"]').forEach((meta) => {
+        try {
+          const { pathname } = new URL(meta.getAttribute("content"), params.originalURL);
+          if (!pathname || pathname === "/") meta.remove();
+        } catch (e) {
+          meta.remove();
+        }
+      });
       const hr = document.createElement("hr");
       main.appendChild(hr);
       WebImporter.rules.createMetadata(main, document);
       WebImporter.rules.transformBackgroundImages(main, document);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
+      main.querySelectorAll("img").forEach((img) => {
+        if (!(img.getAttribute("src") || "").trim()) (img.closest("picture") || img).remove();
+      });
       const rawPath = new URL(params.originalURL).pathname.replace(/\/$/, "").replace(/\.html?$/, "");
       const path = WebImporter.FileUtils.sanitizePath(rawPath === "" ? "/index" : rawPath);
       return [{
